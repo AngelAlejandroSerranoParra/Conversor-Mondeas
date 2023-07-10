@@ -15,9 +15,14 @@ public class Conversor {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, "Bievenido al conversor de monedas", "Conversor de Monedas", JOptionPane.WARNING_MESSAGE);
+        int codigo=JOptionPane.showConfirmDialog(null, "Bienvenido al conversor de Monedas , Quieres empezar ?", "Convertidor de Mondeas", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
+        if (codigo==JOptionPane.YES_OPTION){
+            System.out.println("Has pulsado en SI");
+        }else if(codigo==JOptionPane.NO_OPTION){
+            System.out.println("Has pulsado en NO");
+        }
     }
-
+    
 
     
 }

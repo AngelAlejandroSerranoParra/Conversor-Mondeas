@@ -11,10 +11,13 @@ import javax.swing.*;
  *
  * @author Alex
  */
+
+
+
 public class Selector {
     public void mostrarMenu() {
-        String[] opciones1 = {"Opción 1", "Opción 2", "Opción 3"};
-        String[] opciones2 = {"Opción 4", "Opción 5", "Opción 6"};
+        String[] opciones1 = {"Peso Mexicano", "Opción 2", "Opción 3"};
+        String[] opciones2 = {"Dólar", "Opción 5", "Opción 6"};
 
         JComboBox<String> comboBox1 = new JComboBox<>(opciones1);
         JComboBox<String> comboBox2 = new JComboBox<>(opciones2);
@@ -43,6 +46,19 @@ public class Selector {
 
             System.out.println("Opción 1 seleccionada: " + opcionSeleccionada1);
             System.out.println("Opción 2 seleccionada: " + opcionSeleccionada2);
+
+            if (opcionSeleccionada1.equals("Peso Mexicano")) {
+                Pmexico pmexico = new Pmexico();
+                pmexico.operacion();
+            } else if (opcionSeleccionada2.equals("Dólar")) {
+                Dolar dolar = new Dolar();
+                dolar.operacion();
+            }
         }
+    }
+
+    public static void main(String[] args) {
+        Selector selector = new Selector();
+        selector.mostrarMenu();
     }
 }

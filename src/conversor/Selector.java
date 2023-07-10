@@ -13,11 +13,12 @@ import javax.swing.*;
  */
 
 
+import javax.swing.*;
 
 public class Selector {
     public void mostrarMenu() {
-        String[] opciones1 = {"Peso Mexicano", "Opción 2", "Opción 3"};
-        String[] opciones2 = {"Dólar", "Opción 5", "Opción 6"};
+        String[] opciones1 = {"Peso Mexicano", "Euro", "Opción 3"};
+        String[] opciones2 = {"Dólar", "Opción 2", "PColombiano"};
 
         JComboBox<String> comboBox1 = new JComboBox<>(opciones1);
         JComboBox<String> comboBox2 = new JComboBox<>(opciones2);
@@ -33,26 +34,35 @@ public class Selector {
                 null,
                 panel,
                 "Menú",
-                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.OK_CANCEL_OPTION,
                 JOptionPane.PLAIN_MESSAGE,
                 null,
-                new Object[]{},
+                new Object[]{"OK"},
                 null
         );
 
-        if (seleccion != JOptionPane.CLOSED_OPTION) {
+        if (seleccion == JOptionPane.OK_OPTION) {
             String opcionSeleccionada1 = (String) comboBox1.getSelectedItem();
             String opcionSeleccionada2 = (String) comboBox2.getSelectedItem();
 
             System.out.println("Opción 1 seleccionada: " + opcionSeleccionada1);
             System.out.println("Opción 2 seleccionada: " + opcionSeleccionada2);
 
-            if (opcionSeleccionada1.equals("Peso Mexicano")) {
+            if (opcionSeleccionada1.equals("Peso Mexicano") || opcionSeleccionada1.equals("PColombiano")) {
                 Pmexico pmexico = new Pmexico();
                 pmexico.operacion();
-            } else if (opcionSeleccionada2.equals("Dólar")) {
+            }
+            if (opcionSeleccionada1.equals("Euro")) {
+                Euro euro = new Euro();
+                euro.operacion();
+            }
+            if (opcionSeleccionada2.equals("Dólar") || opcionSeleccionada2.equals("Euro")) {
                 Dolar dolar = new Dolar();
                 dolar.operacion();
+            }
+            if (opcionSeleccionada2.equals("PColombiano")) {
+                PColombiano pcolombiano = new PColombiano();
+                pcolombiano.operacion();
             }
         }
     }

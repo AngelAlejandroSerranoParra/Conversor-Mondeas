@@ -1,12 +1,17 @@
 package conversor;
-import javax.swing.JOptionPane;
+
+import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Selector {
-    private JFrame frame; // Variable de instancia para la ventana de resultado
+    private JFrame frame;
 
     public void mostrarMenu() {
         String[] opciones1 = {"Peso Mexicano", "Euro", "Opción 3"};
@@ -51,7 +56,7 @@ public class Selector {
                 int numero = Integer.parseInt(textoIngresado);
                 pmexico.pmad(numero);
                 String resultado = pmexico.getResultado();
-                mostrarVentanaResultado(resultado);
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
             }
             if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("PColombiano")) {
                 Pmexico pmexico = new Pmexico();
@@ -59,7 +64,7 @@ public class Selector {
                 int numero = Integer.parseInt(textoIngresado);
                 pmexico.pmapc(numero);
                 String resultado = pmexico.getResultado();
-                mostrarVentanaResultado(resultado);
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
             }
             if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("Euro")) {
                 Pmexico pmexico = new Pmexico();
@@ -67,21 +72,22 @@ public class Selector {
                 int numero = Integer.parseInt(textoIngresado);
                 pmexico.pmae(numero);
                 String resultado = pmexico.getResultado();
-                mostrarVentanaResultado(resultado);
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
             }
         }
     }
 
-    private void mostrarVentanaResultado(String resultado) {
-        
+    private void mostrarVentanaResultado(String resultado, String opcionSeleccionada2) {
         frame = new JFrame("Resultado");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JLabel labelResultado = new JLabel(resultado);
-        frame.getContentPane().add(labelResultado);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    
+        JLabel labelResultado = new JLabel("Resultado: " + resultado);
+        JLabel labelOpcion = new JLabel(opcionSeleccionada2);
+
+        JPanel panel = new JPanel();
+        panel.add(labelResultado);
+        panel.add(labelOpcion);
+
         JButton nuevaConversionButton = new JButton("Nueva Conversión");
         nuevaConversionButton.addActionListener(new ActionListener() {
             @Override
@@ -90,7 +96,7 @@ public class Selector {
                 mostrarMenu();
             }
         });
-        frame.getContentPane().add(nuevaConversionButton);
+        panel.add(nuevaConversionButton);
 
         JButton salirButton = new JButton("Salir");
         salirButton.addActionListener(new ActionListener() {
@@ -99,10 +105,10 @@ public class Selector {
                 System.exit(0); // Salir de la aplicación
             }
         });
-        frame.getContentPane().add(salirButton);
+        panel.add(salirButton);
 
-        frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
-        frame.pack();
+        frame.getContentPane().add(panel);
+        frame.setSize(300, 300);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

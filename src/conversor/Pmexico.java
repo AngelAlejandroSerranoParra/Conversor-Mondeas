@@ -13,9 +13,15 @@ class Pmexico {
         // Código para realizar la operación de Pmexico
     }
 
-    public void imprimirHolaMundo(int numero) {
+    public void pmad(int numero) {
         double resultado = (double) numero / 17; // Dividir entre 17 (ejemplo)
         String resultadoFormateado = String.format("%.2f", resultado);
-        System.out.println("Hola Mundo Peso: " + resultadoFormateado);
+        System.out.println("Hola Mundo Peso (Dividir): " + resultadoFormateado);
+    }
+
+    public void pmapc(int numero) {
+        double resultado = numero * 243.35; // Multiplicar por 243.35 (ejemplo)
+        String resultadoFormateado = String.format("%.2f", resultado);
+        System.out.println("Resultado de la multiplicación: " + resultadoFormateado);
     }
 }

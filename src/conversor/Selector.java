@@ -45,15 +45,17 @@ public class Selector {
                 Pmexico pmexico = new Pmexico();
                 pmexico.operacion();
                 int numero = Integer.parseInt(textoIngresado);
-                pmexico.imprimirHolaMundo(numero);
+                pmexico.pmad(numero);
+            }
+            if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("PColombiano")) {
+                Pmexico pmexico = new Pmexico();
+                pmexico.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                pmexico.pmapc(numero);
             }
             if (opcionSeleccionada1.equals("Euro")) {
                 Euro euro = new Euro();
                 euro.operacion();
-            }
-            if (opcionSeleccionada2.equals("PColombiano")) {
-                PColombiano pcolombiano = new PColombiano();
-                pcolombiano.operacion();
             }
         }
     }
@@ -63,3 +65,4 @@ public class Selector {
         selector.mostrarMenu();
     }
 }
+

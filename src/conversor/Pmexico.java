@@ -8,25 +8,33 @@ package conversor;
  *
  * @author Alex
  */
-class Pmexico {
+public class Pmexico {
+    private String resultado;
+
+    public String getResultado() {
+        return resultado;
+    }
+
     public void operacion() {
         // Código para realizar la operación de Pmexico
     }
 
     public void pmad(int numero) {
-        double resultado = (double) numero / 17; // Dividir entre 17 (ejemplo)
-        String resultadoFormateado = String.format("%.2f", resultado);
-        System.out.println("Hola Mundo Peso (Dividir): " + resultadoFormateado);
+        double resultadoCalculado = (double) numero / 17;
+        resultado = String.format("%.2f", resultadoCalculado);
+        System.out.println("Hola Mundo Peso (Dividir): " + resultado);
     }
 
     public void pmapc(int numero) {
-        double resultado = numero * 243.35; // Multiplicar por 243.35 (ejemplo)
-        String resultadoFormateado = String.format("%.2f", resultado);
-        System.out.println("Resultado de la multiplicación: " + resultadoFormateado);
+        double resultadoCalculado = numero * 243.35;
+        resultado = String.format("%.2f", resultadoCalculado);
+        System.out.println("Resultado de la multiplicación: " + resultado);
     }
-     public void pmae(int numero) {
-        double resultado = (double) numero / 18.76; // Dividir entre 17 (ejemplo)
-        String resultadoFormateado = String.format("%.2f", resultado);
-        System.out.println("Hola Mundo Peso (Dividir): " + resultadoFormateado);
+    
+    public void pmae(int numero) {
+        double resultadoCalculado = (double) numero / 18.76;
+        resultado = String.format("%.2f", resultadoCalculado);
+        System.out.println("Hola Mundo Peso (Dividir): " + resultado);
     }
 }
+

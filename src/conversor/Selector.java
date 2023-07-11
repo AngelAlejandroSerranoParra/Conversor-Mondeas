@@ -1,18 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package conversor;
 import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
-import javax.swing.*;
-
-/**
- *
- * @author Alex
- */
-
-
 import javax.swing.*;
 
 public class Selector {
@@ -23,10 +11,13 @@ public class Selector {
         JComboBox<String> comboBox1 = new JComboBox<>(opciones1);
         JComboBox<String> comboBox2 = new JComboBox<>(opciones2);
 
+        JTextField textField = new JTextField(10);
+
         JPanel panel = new JPanel();
+        panel.add(new JLabel("Texto:"));
+        panel.add(textField);
         panel.add(new JLabel("Opción 1:"));
         panel.add(comboBox1);
-        panel.add(Box.createHorizontalStrut(15)); // Separación horizontal entre los JComboBox
         panel.add(new JLabel("Opción 2:"));
         panel.add(comboBox2);
 
@@ -44,21 +35,21 @@ public class Selector {
         if (seleccion == JOptionPane.OK_OPTION) {
             String opcionSeleccionada1 = (String) comboBox1.getSelectedItem();
             String opcionSeleccionada2 = (String) comboBox2.getSelectedItem();
+            String textoIngresado = textField.getText();
 
+            System.out.println("Texto ingresado: " + textoIngresado);
             System.out.println("Opción 1 seleccionada: " + opcionSeleccionada1);
             System.out.println("Opción 2 seleccionada: " + opcionSeleccionada2);
 
-            if (opcionSeleccionada1.equals("Peso Mexicano") || opcionSeleccionada1.equals("PColombiano")) {
+            if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("Dólar")) {
                 Pmexico pmexico = new Pmexico();
                 pmexico.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                pmexico.imprimirHolaMundo(numero);
             }
             if (opcionSeleccionada1.equals("Euro")) {
                 Euro euro = new Euro();
                 euro.operacion();
-            }
-            if (opcionSeleccionada2.equals("Dólar") || opcionSeleccionada2.equals("Euro")) {
-                Dolar dolar = new Dolar();
-                dolar.operacion();
             }
             if (opcionSeleccionada2.equals("PColombiano")) {
                 PColombiano pcolombiano = new PColombiano();

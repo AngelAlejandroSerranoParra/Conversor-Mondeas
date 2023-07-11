@@ -8,10 +8,14 @@ package conversor;
  *
  * @author Alex
  */
-public class Pmexico {
+class Pmexico {
     public void operacion() {
-        System.out.println("Clase Pmexico llamada");
-        // Aquí puedes agregar la lógica correspondiente para la opción "Peso Mexicano"
+        // Código para realizar la operación de Pmexico
+    }
+
+    public void imprimirHolaMundo(int numero) {
+        double resultado = (double) numero / 17; // Dividir entre 17 (ejemplo)
+        String resultadoFormateado = String.format("%.2f", resultado);
+        System.out.println("Hola Mundo Peso: " + resultadoFormateado);
     }
 }
-

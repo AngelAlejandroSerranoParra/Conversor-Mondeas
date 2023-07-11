@@ -24,4 +24,9 @@ class Pmexico {
         String resultadoFormateado = String.format("%.2f", resultado);
         System.out.println("Resultado de la multiplicación: " + resultadoFormateado);
     }
+     public void pmae(int numero) {
+        double resultado = (double) numero / 18.76; // Dividir entre 17 (ejemplo)
+        String resultadoFormateado = String.format("%.2f", resultado);
+        System.out.println("Hola Mundo Peso (Dividir): " + resultadoFormateado);
+    }
 }

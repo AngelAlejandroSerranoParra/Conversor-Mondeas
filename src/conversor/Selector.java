@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Selector {
     public void mostrarMenu() {
         String[] opciones1 = {"Peso Mexicano", "Euro", "Opción 3"};
-        String[] opciones2 = {"Dólar", "Opción 2", "PColombiano"};
+        String[] opciones2 = {"Dólar", "Euro", "PColombiano"};
 
         JComboBox<String> comboBox1 = new JComboBox<>(opciones1);
         JComboBox<String> comboBox2 = new JComboBox<>(opciones2);
@@ -53,9 +53,11 @@ public class Selector {
                 int numero = Integer.parseInt(textoIngresado);
                 pmexico.pmapc(numero);
             }
-            if (opcionSeleccionada1.equals("Euro")) {
-                Euro euro = new Euro();
-                euro.operacion();
+            if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("Euro")) {
+                Pmexico pmexico = new Pmexico();
+                pmexico.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                pmexico.pmae(numero);
             }
         }
     }

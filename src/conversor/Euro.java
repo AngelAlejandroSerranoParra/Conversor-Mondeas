@@ -16,7 +16,7 @@ public class Euro {
     }
 
     public void operacion() {
-        // Código para realizar la operación de Pmexico
+        
     }
     
     public void eDolar(int numero) {
@@ -44,8 +44,10 @@ public class Euro {
         resultado = String.format("%.2f", resultadoCalculado);
         System.out.println("Resultado de la multiplicación: " + resultado);
     }
-    public void pMeEuro(int numero) {
-        double resultadoCalculado = numero * 18.90; // Supongamos que 1 Euro equivale a 1.18 Dólares (ejemplo)
+    public void pMex(int numero) {
+        double resultadoCalculado = numero * 1;
         resultado = String.format("%.2f", resultadoCalculado);
         System.out.println("Resultado de la multiplicación: " + resultado);
-    }}
+    }
+    
+}

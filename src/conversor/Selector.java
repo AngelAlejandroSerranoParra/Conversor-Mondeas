@@ -14,8 +14,8 @@ public class Selector {
     private JFrame frame;
 
     public void mostrarMenu() {
-        String[] opciones1 = {"Peso Mexicano", "Euro", "Opción 3"};
-        String[] opciones2 = {"Dólar", "Euro", "PColombiano", "Yuan", "Peso Argentino","Peso Mexicano"};
+        String[] opciones1 = {"Peso Mexicano", "Euro", "Dolar"};
+        String[] opciones2 = {"Dolar", "Euro", "PColombiano", "Yuan", "Peso Argentino","Peso Mexicano"};
 
         JComboBox<String> comboBox1 = new JComboBox<>(opciones1);
         JComboBox<String> comboBox2 = new JComboBox<>(opciones2);
@@ -50,7 +50,7 @@ public class Selector {
             System.out.println("Opción 1 seleccionada: " + opcionSeleccionada1);
             System.out.println("Opción 2 seleccionada: " + opcionSeleccionada2);
 
-            if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("Dólar")) {
+            if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("Dolar")) {
                 Pmexico pmexico = new Pmexico();
                 pmexico.operacion();
                 int numero = Integer.parseInt(textoIngresado);
@@ -82,7 +82,7 @@ public class Selector {
                 String resultado = pmexico.getResultado();
                 mostrarVentanaResultado(resultado, opcionSeleccionada2);
             }
-            if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("Dólar")) {
+            if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("Dolar")) {
                 Euro euro = new Euro();
                 euro.operacion();
                 int numero = Integer.parseInt(textoIngresado);
@@ -139,6 +139,55 @@ public class Selector {
                 String resultado = pmexico.getResultado();
                 mostrarVentanaResultado(resultado, opcionSeleccionada2);
             }
+            if (opcionSeleccionada1.equals("Dolar") && opcionSeleccionada2.equals("Peso Mexicano")) {
+                Dolar dolar = new Dolar();
+                dolar.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                dolar.pDome(numero);
+                String resultado = dolar.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Dolar") && opcionSeleccionada2.equals("Dolar")) {
+                Dolar dolar = new Dolar();
+                dolar.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                dolar.pDodo(numero);
+                String resultado = dolar.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Dolar") && opcionSeleccionada2.equals("Dolar")) {
+                Dolar dolar = new Dolar();
+                dolar.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                dolar.pDodo(numero);
+                String resultado = dolar.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Dolar") && opcionSeleccionada2.equals("PColombiano")) {
+                Dolar dolar = new Dolar();
+                dolar.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                dolar.pDoCO(numero);
+                String resultado = dolar.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Dolar") && opcionSeleccionada2.equals("Yuan")) {
+                Dolar dolar = new Dolar();
+                dolar.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                dolar.pDoYu(numero);
+                String resultado = dolar.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Dolar") && opcionSeleccionada2.equals("Peso Argentino")) {
+                Dolar dolar = new Dolar();
+                dolar.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                dolar.pDoAr(numero);
+                String resultado = dolar.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+
 
            
         }

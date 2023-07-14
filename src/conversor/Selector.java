@@ -15,7 +15,7 @@ public class Selector {
 
     public void mostrarMenu() {
         String[] opciones1 = {"Peso Mexicano", "Euro", "Opción 3"};
-        String[] opciones2 = {"Dólar", "Euro", "PColombiano"};
+        String[] opciones2 = {"Dólar", "Euro", "PColombiano", "Yuan", "Peso Argentino","Peso Mexicano"};
 
         JComboBox<String> comboBox1 = new JComboBox<>(opciones1);
         JComboBox<String> comboBox2 = new JComboBox<>(opciones2);
@@ -74,6 +74,73 @@ public class Selector {
                 String resultado = pmexico.getResultado();
                 mostrarVentanaResultado(resultado, opcionSeleccionada2);
             }
+            if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("Yuan")) {
+                Pmexico pmexico = new Pmexico();
+                pmexico.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                pmexico.pmay(numero);
+                String resultado = pmexico.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("Dólar")) {
+                Euro euro = new Euro();
+                euro.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                euro.eDolar(numero);
+                String resultado = euro.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("Euro")) {
+                Euro euro = new Euro();
+                euro.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                euro.pEuro(numero);
+                String resultado = euro.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("PColombiano")) {
+                Euro euro = new Euro();
+                euro.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                euro.pColo(numero);
+                String resultado = euro.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("Yuan")) {
+                Euro euro = new Euro();
+                euro.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                euro.pYuan(numero);
+                String resultado = euro.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("Peso Argentino")) {
+                Euro euro = new Euro();
+                euro.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                euro.pArg(numero);
+                String resultado = euro.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            
+            if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("Peso Mexicano")) {
+                Pmexico pmexico = new Pmexico();
+                pmexico.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                pmexico.pMex(numero);
+                String resultado = pmexico.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+            if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("Peso Mexicano")) {
+                Pmexico pmexico = new Pmexico();
+                pmexico.operacion();
+                int numero = Integer.parseInt(textoIngresado);
+                pmexico.pMex(numero);
+                String resultado = pmexico.getResultado();
+                mostrarVentanaResultado(resultado, opcionSeleccionada2);
+            }
+
+           
         }
     }
 

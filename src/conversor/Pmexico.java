@@ -36,5 +36,23 @@ public class Pmexico {
         resultado = String.format("%.2f", resultadoCalculado);
         System.out.println("Hola Mundo Peso (Dividir): " + resultado);
     }
+    public void pmay(int numero) {
+        double resultadoCalculado = numero * 0.43;
+        resultado = String.format("%.2f", resultadoCalculado);
+        System.out.println("Resultado de la multiplicación: " + resultado);
+    }
+    public void parg(int numero) {
+        double resultadoCalculado = numero * 15.68;
+        resultado = String.format("%.2f", resultadoCalculado);
+        System.out.println("Resultado de la multiplicación: " + resultado);
+    }
+     public void pMex(int numero) {
+        double resultadoCalculado = numero * 1;
+        resultado = String.format("%.2f", resultadoCalculado);
+        System.out.println("Resultado de la multiplicación: " + resultado);
+    }
+    
+
 }
+
 

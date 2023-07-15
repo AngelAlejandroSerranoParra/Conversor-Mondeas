@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package conversor;
 
-/**
- *
- * @author Alex
- */
 public class Pmexico {
     private String resultado;
 
@@ -19,40 +11,39 @@ public class Pmexico {
         // Código para realizar la operación de Pmexico
     }
 
-    public void pmad(int numero) {
-        double resultadoCalculado = (double) numero / 17;
-        resultado = String.format("%.2f", resultadoCalculado);
-        System.out.println("Hola Mundo Peso (Dividir): " + resultado);
+    public void pmad(double numero) {
+        double resultadoCalculado = numero / 17;
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
     }
 
-    public void pmapc(int numero) {
+    public void pmapc(double numero) {
         double resultadoCalculado = numero * 243.35;
-        resultado = String.format("%.2f", resultadoCalculado);
-        System.out.println("Resultado de la multiplicación: " + resultado);
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
     }
-    
-    public void pmae(int numero) {
-        double resultadoCalculado = (double) numero / 18.76;
-        resultado = String.format("%.2f", resultadoCalculado);
-        System.out.println("Hola Mundo Peso (Dividir): " + resultado);
+
+    public void pmae(double numero) {
+        double resultadoCalculado = numero / 18.76;
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
     }
-    public void pmay(int numero) {
+
+    public void pmay(double numero) {
         double resultadoCalculado = numero * 0.43;
-        resultado = String.format("%.2f", resultadoCalculado);
-        System.out.println("Resultado de la multiplicación: " + resultado);
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
     }
-    public void parg(int numero) {
+
+    public void pArg(double numero) {
         double resultadoCalculado = numero * 15.68;
-        resultado = String.format("%.2f", resultadoCalculado);
-        System.out.println("Resultado de la multiplicación: " + resultado);
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
     }
-     public void pMex(int numero) {
+
+    public void pMex(double numero) {
         double resultadoCalculado = numero * 1;
-        resultado = String.format("%.2f", resultadoCalculado);
-        System.out.println("Resultado de la multiplicación: " + resultado);
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
     }
-    
-
 }
-
-

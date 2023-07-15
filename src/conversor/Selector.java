@@ -14,7 +14,7 @@ public class Selector {
     private JFrame frame;
 
     public void mostrarMenu() {
-        String[] opciones1 = {"Peso Mexicano", "Euro", "Dolar", "PColombiano"};
+        String[] opciones1 = {"Peso Mexicano", "Euro", "Dolar", "PColombiano","Yuan"};
         String[] opciones2 = {"Dolar", "Euro", "PColombiano", "Yuan", "Peso Argentino", "Peso Mexicano"};
 
         JComboBox<String> comboBox1 = new JComboBox<>(opciones1);
@@ -201,6 +201,54 @@ public class Selector {
                     double numero = Double.parseDouble(textoIngresado);
                     pcolombia.pCAr(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
                     String resultado = pcolombia.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Yuan")) {
+                    Pyuan pyuan = new Pyuan();
+                    pyuan.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pyuan.pYY(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pyuan.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Dolar")) {
+                    Pyuan pyuan = new Pyuan();
+                    pyuan.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pyuan.pYD(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pyuan.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                 else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Euro")) {
+                    Pyuan pyuan = new Pyuan();
+                    pyuan.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pyuan.pYE(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pyuan.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("PColombiano")) {
+                    Pyuan pyuan = new Pyuan();
+                    pyuan.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pyuan.pYPC(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pyuan.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Peso Argentino")) {
+                    Pyuan pyuan = new Pyuan();
+                    pyuan.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pyuan.pYPA(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pyuan.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Peso Mexicano")) {
+                    Pyuan pyuan = new Pyuan();
+                    pyuan.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pyuan.pYMA(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pyuan.getResultado();
                     mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
                 }
 

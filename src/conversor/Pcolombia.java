@@ -28,4 +28,14 @@ public class Pcolombia {
         resultado = String.format("%.2f", resultadoCalculado);
         System.out.println("Resultado de la conversión: " + resultado);
     }
+    public void pYu(double numero) {
+        double resultadoCalculado = numero * 0.0018; // Supongamos que 1 Peso Colombiano equivale a 0.025 Dólares (ejemplo)
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
+    }
+    public void pCAr(double numero) {
+        double resultadoCalculado = numero * 0.065; // Supongamos que 1 Peso Colombiano equivale a 0.025 Dólares (ejemplo)
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
+    }
 }

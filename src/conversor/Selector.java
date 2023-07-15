@@ -185,8 +185,23 @@ public class Selector {
                     double numero = Double.parseDouble(textoIngresado);
                     pcolombia.pEu(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
                     String resultado = pcolombia.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
-                    
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Yuan")) {
+                    Pcolombia pcolombia = new Pcolombia();
+                    pcolombia.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pcolombia.pYu(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pcolombia.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Yuan")) {
+                    Pcolombia pcolombia = new Pcolombia();
+                    pcolombia.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pcolombia.pCAr(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pcolombia.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
                 }
 
                 else {

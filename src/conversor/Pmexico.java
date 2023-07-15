@@ -24,7 +24,7 @@ public class Pmexico {
     }
 
     public void pmae(double numero) {
-        double resultadoCalculado = numero * 18.76;
+        double resultadoCalculado = numero * 0.053;
         resultado = String.format("%.6f", resultadoCalculado);
         System.out.println("Resultado de la conversión: " + resultado);
     }

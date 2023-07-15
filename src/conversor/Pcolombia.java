@@ -20,12 +20,12 @@ public class Pcolombia {
 
     public void pPD(double numero) {
         double resultadoCalculado = numero * 0.0025; // Supongamos que 1 Peso Colombiano equivale a 0.025 Dólares (ejemplo)
-        resultado = String.format("%.2f", resultadoCalculado);
+        resultado = String.format("%.6f", resultadoCalculado);
         System.out.println("Resultado de la conversión: " + resultado);
     }
     public void pEu(double numero) {
         double resultadoCalculado = numero * 0.0022; // Supongamos que 1 Peso Colombiano equivale a 0.025 Dólares (ejemplo)
-        resultado = String.format("%.2f", resultadoCalculado);
+        resultado = String.format("%.6f", resultadoCalculado);
         System.out.println("Resultado de la conversión: " + resultado);
     }
     public void pYu(double numero) {
@@ -34,7 +34,12 @@ public class Pcolombia {
         System.out.println("Resultado de la conversión: " + resultado);
     }
     public void pCAr(double numero) {
-        double resultadoCalculado = numero * 0.0018; // Supongamos que 1 Peso Colombiano equivale a 0.025 Dólares (ejemplo)
+        double resultadoCalculado = numero * 0.065; // Supongamos que 1 Peso Colombiano equivale a 0.025 Dólares (ejemplo)
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
+    }
+    public void pCAM(double numero) {
+        double resultadoCalculado = numero * 0.0041; // Supongamos que 1 Peso Colombiano equivale a 0.025 Dólares (ejemplo)
         resultado = String.format("%.6f", resultadoCalculado);
         System.out.println("Resultado de la conversión: " + resultado);
     }

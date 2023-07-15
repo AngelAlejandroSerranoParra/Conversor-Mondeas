@@ -42,7 +42,7 @@ public class Euro {
     }
 
     public void pMex(double numero) {
-        double resultadoCalculado = numero * 1; // Supongamos que 1 Euro equivale a 1 Peso Mexicano (ejemplo)
+        double resultadoCalculado = numero * 18.79; // Supongamos que 1 Euro equivale a 1 Peso Mexicano (ejemplo)
         resultado = String.format("%.6f", resultadoCalculado);
         System.out.println("Resultado de la conversión: " + resultado);
     }

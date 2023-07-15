@@ -14,7 +14,7 @@ public class Selector {
     private JFrame frame;
 
     public void mostrarMenu() {
-        String[] opciones1 = {"Peso Mexicano", "Euro", "Dolar", "PColombiano","Yuan", "Peso Argentino"};
+        String[] opciones1 = {"Peso Mexicano", "Euro", "Dolar", "PColombiano", "Yuan", "Peso Argentino"};
         String[] opciones2 = {"Dolar", "Euro", "PColombiano", "Yuan", "Peso Argentino", "Peso Mexicano"};
 
         JComboBox<String> comboBox1 = new JComboBox<>(opciones1);
@@ -79,6 +79,14 @@ public class Selector {
                     pmexico.pmay(numero);
                     String resultado = pmexico.getResultado();
                     mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                }else if (opcionSeleccionada1.equals("Peso Mexicano") && opcionSeleccionada2.equals("Peso Argentino")) {
+                    Pmexico pmexico = new Pmexico();
+                    pmexico.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pmexico.pArg(numero);
+                    String resultado = pmexico.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                
                 } else if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("Dolar")) {
                     Euro euro = new Euro();
                     euro.operacion();
@@ -122,17 +130,24 @@ public class Selector {
                     String resultado = pmexico.getResultado();
                     mostrarVentanaResultado(resultado, opcionSeleccionada2);
                 } else if (opcionSeleccionada1.equals("Euro") && opcionSeleccionada2.equals("Peso Mexicano")) {
-                    Pmexico pmexico = new Pmexico();
-                    pmexico.operacion();
+                    Euro euro = new Euro();
+                    euro.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pmexico.pMex(numero);
-                    String resultado = pmexico.getResultado();
+                    euro.pMex(numero);
+                    String resultado = euro.getResultado();
                     mostrarVentanaResultado(resultado, opcionSeleccionada2);
                 } else if (opcionSeleccionada1.equals("Dolar") && opcionSeleccionada2.equals("Peso Mexicano")) {
                     Dolar dolar = new Dolar();
                     dolar.operacion();
                     double numero = Double.parseDouble(textoIngresado);
                     dolar.pDome(numero);
+                    String resultado = dolar.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                }else if (opcionSeleccionada1.equals("Dolar") && opcionSeleccionada2.equals("Euro")) {
+                    Dolar dolar = new Dolar();
+                    dolar.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    dolar.pDoEu(numero);
                     String resultado = dolar.getResultado();
                     mostrarVentanaResultado(resultado, opcionSeleccionada2);
                 } else if (opcionSeleccionada1.equals("Dolar") && opcionSeleccionada2.equals("Dolar")) {
@@ -163,148 +178,139 @@ public class Selector {
                     dolar.pDoAr(numero);
                     String resultado = dolar.getResultado();
                     mostrarVentanaResultado(resultado, opcionSeleccionada2);
-                
-                }else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Dolar")) {
+                } else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Dolar")) {
                     Pcolombia pcolombia = new Pcolombia();
                     pcolombia.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pcolombia.pPD(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pcolombia.pPD(numero);
                     String resultado = pcolombia.getResultado();
                     mostrarVentanaResultado(resultado, opcionSeleccionada2);
-                    
-                }else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("PColombiano")) {
+                } else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("PColombiano")) {
                     Pcolombia pcolombia = new Pcolombia();
                     pcolombia.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pcolombia.pCC(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pcolombia.pCC(numero);
                     String resultado = pcolombia.getResultado();
                     mostrarVentanaResultado(resultado, opcionSeleccionada2);
-                }else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Euro")) {
+                } else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Euro")) {
                     Pcolombia pcolombia = new Pcolombia();
                     pcolombia.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pcolombia.pEu(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pcolombia.pEu(numero);
                     String resultado = pcolombia.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Yuan")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Yuan")) {
                     Pcolombia pcolombia = new Pcolombia();
                     pcolombia.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pcolombia.pYu(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pcolombia.pYu(numero);
                     String resultado = pcolombia.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Yuan")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Peso Argentino")) {
                     Pcolombia pcolombia = new Pcolombia();
                     pcolombia.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pcolombia.pCAr(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pcolombia.pCAr(numero);
                     String resultado = pcolombia.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Yuan")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("PColombiano") && opcionSeleccionada2.equals("Peso Mexicano")) {
+                    Pcolombia pcolombia = new Pcolombia();
+                    pcolombia.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pcolombia.pCAM(numero);
+                    String resultado = pcolombia.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Yuan")) {
                     Pyuan pyuan = new Pyuan();
                     pyuan.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pyuan.pYY(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pyuan.pYY(numero);
                     String resultado = pyuan.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Dolar")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Dolar")) {
                     Pyuan pyuan = new Pyuan();
                     pyuan.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pyuan.pYD(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pyuan.pYD(numero);
                     String resultado = pyuan.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                 else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Euro")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Euro")) {
                     Pyuan pyuan = new Pyuan();
                     pyuan.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pyuan.pYE(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pyuan.pYE(numero);
                     String resultado = pyuan.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("PColombiano")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("PColombiano")) {
                     Pyuan pyuan = new Pyuan();
                     pyuan.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pyuan.pYPC(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pyuan.pYPC(numero);
                     String resultado = pyuan.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Peso Argentino")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Peso Argentino")) {
                     Pyuan pyuan = new Pyuan();
                     pyuan.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pyuan.pYPA(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pyuan.pYPA(numero);
                     String resultado = pyuan.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Peso Mexicano")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Yuan") && opcionSeleccionada2.equals("Peso Mexicano")) {
                     Pyuan pyuan = new Pyuan();
                     pyuan.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pyuan.pYMA(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pyuan.pYMA(numero);
                     String resultado = pyuan.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Peso Argentino")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Peso Argentino")) {
                     Pargen pargen = new Pargen();
                     pargen.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pargen.pAA(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pargen.pAA(numero);
                     String resultado = pargen.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Dolar")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Dolar")) {
                     Pargen pargen = new Pargen();
                     pargen.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pargen.pAD(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pargen.pAD(numero);
                     String resultado = pargen.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Euro")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Euro")) {
                     Pargen pargen = new Pargen();
                     pargen.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pargen.pAE(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pargen.pAE(numero);
                     String resultado = pargen.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("PColombiano")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("PColombiano")) {
                     Pargen pargen = new Pargen();
                     pargen.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pargen.pAPC(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pargen.pAPC(numero);
                     String resultado = pargen.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Yuan")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Yuan")) {
                     Pargen pargen = new Pargen();
                     pargen.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pargen.pAyu(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pargen.pAyu(numero);
                     String resultado = pargen.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Peso Mexicano")) {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Peso Mexicano")) {
                     Pargen pargen = new Pargen();
                     pargen.operacion();
                     double numero = Double.parseDouble(textoIngresado);
-                    pargen.pAMX(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    pargen.pAMX(numero);
                     String resultado = pargen.getResultado();
-                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
-                }
-
-                else {
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);
+                } else {
                     JOptionPane.showMessageDialog(null, "La conversión seleccionada no es válida", "Error", JOptionPane.ERROR_MESSAGE);
+                    mostrarMenu(); // Regresar a la ventana de conversión si hay un error
                 }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Error: Ingrese un número válido", "Error", JOptionPane.ERROR_MESSAGE);
+                mostrarMenu(); // Regresar a la ventana de conversión si hay un error
             }
         }
     }

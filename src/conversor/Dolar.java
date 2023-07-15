@@ -40,4 +40,9 @@ public class Dolar {
         resultado = String.format("%.6f", resultadoCalculado);
         System.out.println("Resultado de la conversión: " + resultado);
     }
+    public void pDoEu(double numero) {
+        double resultadoCalculado = numero * 0.89;
+        resultado = String.format("%.6f", resultadoCalculado);
+        System.out.println("Resultado de la conversión: " + resultado);
+    }
 }

@@ -14,7 +14,7 @@ public class Selector {
     private JFrame frame;
 
     public void mostrarMenu() {
-        String[] opciones1 = {"Peso Mexicano", "Euro", "Dolar", "PColombiano","Yuan"};
+        String[] opciones1 = {"Peso Mexicano", "Euro", "Dolar", "PColombiano","Yuan", "Peso Argentino"};
         String[] opciones2 = {"Dolar", "Euro", "PColombiano", "Yuan", "Peso Argentino", "Peso Mexicano"};
 
         JComboBox<String> comboBox1 = new JComboBox<>(opciones1);
@@ -249,6 +249,54 @@ public class Selector {
                     double numero = Double.parseDouble(textoIngresado);
                     pyuan.pYMA(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
                     String resultado = pyuan.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Peso Argentino")) {
+                    Pargen pargen = new Pargen();
+                    pargen.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pargen.pAA(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pargen.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Dolar")) {
+                    Pargen pargen = new Pargen();
+                    pargen.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pargen.pAD(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pargen.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Euro")) {
+                    Pargen pargen = new Pargen();
+                    pargen.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pargen.pAE(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pargen.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("PColombiano")) {
+                    Pargen pargen = new Pargen();
+                    pargen.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pargen.pAPC(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pargen.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Yuan")) {
+                    Pargen pargen = new Pargen();
+                    pargen.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pargen.pAyu(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pargen.getResultado();
+                    mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
+                }
+                else if (opcionSeleccionada1.equals("Peso Argentino") && opcionSeleccionada2.equals("Peso Mexicano")) {
+                    Pargen pargen = new Pargen();
+                    pargen.operacion();
+                    double numero = Double.parseDouble(textoIngresado);
+                    pargen.pAMX(numero); // Llamada al nuevo método para la conversión Peso Colombiano a Peso Colombiano
+                    String resultado = pargen.getResultado();
                     mostrarVentanaResultado(resultado, opcionSeleccionada2);                   
                 }
 
